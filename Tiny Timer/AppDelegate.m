@@ -134,7 +134,9 @@
 
 - (IBAction)countdownDurationMenuClicked:(id)sender {
 	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]] informativeText:@"Don't worry, this will not reset the current countdown timer."];
-	NSTimeInterval inputInterval = [input doubleValue];
-	[self setCountdownDuration:&inputInterval];
+	if (input) {
+		NSTimeInterval inputInterval = [input doubleValue];
+		[self setCountdownDuration:&inputInterval];
+	}
 }
 @end
