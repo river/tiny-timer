@@ -73,7 +73,11 @@
 - (NSString*) formatTimeElapsed: (NSTimeInterval)secondsElapsed {
     NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:secondsElapsed];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"HH:mm:ss"];
+	if (secondsElapsed > 3600) {
+		[dateFormatter setDateFormat:@"HH:mm:ss"];
+	} else {
+		[dateFormatter setDateFormat:@"mm:ss"];
+	}
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
     return [dateFormatter stringFromDate:timerDate];
 }
