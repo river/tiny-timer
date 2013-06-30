@@ -13,7 +13,12 @@
     NSTimeInterval timeInterval;
     NSTimeInterval lapTimeInterval;
     BOOL stopwatchRunning;
+	
+	//  countdown
+	NSTimeInterval countdownDuration;
 }
+
+@property (readwrite) NSTimeInterval countdownDuration;
 
 - (void) startTimer;
 - (void) pauseTimer;
@@ -21,6 +26,7 @@
 - (bool) running;
 - (NSTimeInterval) lapSecondsElapsed;
 - (NSTimeInterval) secondsElapsed;
-- (NSString*) formatTimeElapsed: (NSTimeInterval)secondsElapsed;
+- (NSTimeInterval) countdownSecondsRemaining;
+- (NSString*) formatTime: (NSTimeInterval)seconds;
 
 @end
