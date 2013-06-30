@@ -109,12 +109,14 @@
 	[self updateStatusBar];
 }
 
-- (NSString *)input: (NSString *)prompt defaultValue: (NSString *)defaultValue {
+- (NSString *)	input: (NSString *)prompt
+				defaultValue: (NSString *)defaultValue
+				informativeText: (NSString *)informativeText {
 	NSAlert *alert = [NSAlert alertWithMessageText:prompt
 									 defaultButton:@"OK"
 								   alternateButton:@"Cancel"
 									   otherButton:nil
-						 informativeTextWithFormat:@""];
+						 informativeTextWithFormat:@"%@", informativeText];
 	
 	NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
 	[input setStringValue:defaultValue];
@@ -131,7 +133,7 @@
 }
 
 - (IBAction)countdownDurationMenuClicked:(id)sender {
-	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]]];
+	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]] informativeText:@"Don't worry, this will not reset the current countdown timer."];
 	NSTimeInterval inputInterval = [input doubleValue];
 	[self setCountdownDuration:&inputInterval];
 }

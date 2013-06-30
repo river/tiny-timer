@@ -14,6 +14,7 @@
 		570D24C7177FEDE90017A0FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24C6177FEDE90017A0FB /* AppDelegate.m */; };
 		570D24CA177FEDEA0017A0FB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570D24C8177FEDEA0017A0FB /* MainMenu.xib */; };
 		570D24D2177FF3ED0017A0FB /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24D1177FF3ED0017A0FB /* Timer.m */; };
+		57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA9161780D4D30029930D /* tiny-timer.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		570D24C9177FEDEA0017A0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		570D24D0177FF3ED0017A0FB /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		570D24D1177FF3ED0017A0FB /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		57AEA9161780D4D30029930D /* tiny-timer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tiny-timer.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +51,7 @@
 		570D24A7177FEDE80017A0FB = {
 			isa = PBXGroup;
 			children = (
+				57AEA9161780D4D30029930D /* tiny-timer.icns */,
 				570D24B9177FEDE90017A0FB /* Tiny Timer */,
 				570D24B2177FEDE90017A0FB /* Frameworks */,
 				570D24B1177FEDE90017A0FB /* Products */,
@@ -161,6 +164,7 @@
 				570D24BE177FEDE90017A0FB /* InfoPlist.strings in Resources */,
 				570D24C4177FEDE90017A0FB /* Credits.rtf in Resources */,
 				570D24CA177FEDEA0017A0FB /* MainMenu.xib in Resources */,
+				57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
