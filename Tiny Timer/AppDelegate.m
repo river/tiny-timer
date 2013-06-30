@@ -9,10 +9,16 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+@synthesize statusBar = _statusBar;
 
-- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+- (void) awakeFromNib
 {
-	// Insert code here to initialize your application
+	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+	
+	self.statusBar.title = @"Test";
+	
+	self.statusBar.menu = self.statusMenu;
+	self.statusBar.highlightMode = YES;
 }
 
 @end
