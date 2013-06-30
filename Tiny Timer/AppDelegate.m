@@ -6,7 +6,6 @@
 //  Copyright (c) 2013 River Jiang. All rights reserved.
 //
 
-//  TODO countdown functionality (all I have to do is extend the Timer class to be able to subtract from a certain interval)
 //  TODO prettier interface, instead of using default menu dropdown
 //  TODO nicer indication of whether the timer/countdown is running than using the play/pause unicode characters (which are way too bold for the job) -- is it possible to have images alongside the text label?
 
@@ -23,6 +22,7 @@
 	self.statusBar.highlightMode = YES;
 	
 	stopwatch = [[Timer alloc] init];
+	[stopwatch setCountdownDuration:20];
 }
 
 - (void) updateStatusBar {
@@ -35,7 +35,7 @@
 //	
 //	self.statusBar.title = [NSString stringWithFormat:@"%@ %@", statusIcon, [stopwatch formatTimeElapsed:[stopwatch secondsElapsed]] ];
 	
-	self.statusBar.title = [stopwatch formatTimeElapsed:[stopwatch secondsElapsed]];
+	self.statusBar.title = [stopwatch formatTime:[stopwatch countdownSecondsRemaining]];
 }
 
 - (IBAction)stopwatchStartPause:(id)sender {

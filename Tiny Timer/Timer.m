@@ -15,6 +15,7 @@
 #import "Timer.h"
 
 @implementation Timer
+@synthesize countdownDuration;
 
 //  Main methods to call: startTimer, pauseTimer, resetTimer to control the timer
 //  secondsElapsed, formatTimeElapsed to check on the timer state
@@ -45,6 +46,7 @@
     timeInterval = lapTimeInterval = 0.0;
 }
 
+//  Whether either the stopwatch or the countdown is running
 - (bool) running {
 	return stopwatchRunning;
 }
@@ -57,7 +59,7 @@
         lapTimeInterval = [currentDate timeIntervalSinceDate:startDate];
         
         // make sure this is called only once per second to save resources
-        // NSLog([NSString stringWithFormat:@"%f", lapTimeInterval]);
+        NSLog([NSString stringWithFormat:@"%f", countdownDuration - timeInterval - lapTimeInterval]);
     }
     
     return lapTimeInterval;
@@ -69,17 +71,29 @@
     return timeInterval + lapTimeInterval;
 }
 
+//  Returns seconds remaining from countdownDuration
+- (NSTimeInterval) countdownSecondsRemaining {
+	return self.countdownDuration - self.secondsElapsed;
+}
+
 //  Formats time elapsed as "00:00:00"
-- (NSString*) formatTimeElapsed: (NSTimeInterval)secondsElapsed {
-    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:secondsElapsed];
+- (NSString*) formatTime: (NSTimeInterval)seconds {
+	// When countdown reaches a negative
+	NSString *prefix = @"";
+	if (seconds < 0) {
+		seconds *= -1;
+		prefix = @"-";
+	}
+	
+    NSDate *timerDate = [NSDate dateWithTimeIntervalSince1970:seconds];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-	if (secondsElapsed > 3600) {
+	if (seconds > 3600) {
 		[dateFormatter setDateFormat:@"HH:mm:ss"];
 	} else {
 		[dateFormatter setDateFormat:@"mm:ss"];
 	}
     [dateFormatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0.0]];
-    return [dateFormatter stringFromDate:timerDate];
+    return [NSString stringWithFormat:@"%@%@", prefix, [dateFormatter stringFromDate:timerDate]];
 }
 
 @end
