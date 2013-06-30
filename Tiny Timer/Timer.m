@@ -16,6 +16,9 @@
 
 @implementation Timer
 
+//  Main methods to call: startTimer, pauseTimer, resetTimer to control the timer
+//  secondsElapsed, formatTimeElapsed to check on the timer state
+
 //  Starts and resumes the timer (after both pauses and resets)
 - (void) startTimer {
     // make sure not to reset count when stopwatch is running
