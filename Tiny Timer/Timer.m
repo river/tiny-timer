@@ -33,6 +33,7 @@
 - (void) pauseTimer {
     if (stopwatchRunning) {
         timeInterval += [self lapSecondsElapsed];
+		lapTimeInterval = 0.0;
         stopwatchRunning = FALSE;
     }    
 }
@@ -42,6 +43,10 @@
     stopwatchRunning = FALSE;
     startDate = nil;
     timeInterval = lapTimeInterval = 0.0;
+}
+
+- (bool) running {
+	return stopwatchRunning;
 }
 
 //  Returns seconds elapsed since last resumption as NSTimeInterval; can be treated as a double

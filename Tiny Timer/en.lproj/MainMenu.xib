@@ -1293,27 +1293,49 @@
 			<object class="NSCustomObject" id="755631768">
 				<string key="NSClassName">NSFontManager</string>
 			</object>
-			<object class="NSMenu" id="155865679">
+			<object class="NSMenu" id="1066330960">
 				<string key="NSTitle"/>
 				<array class="NSMutableArray" key="NSMenuItems">
-					<object class="NSMenuItem" id="122510793">
-						<reference key="NSMenu" ref="155865679"/>
-						<string key="NSTitle">Item 1</string>
+					<object class="NSMenuItem" id="322896408">
+						<reference key="NSMenu" ref="1066330960"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<string key="NSTitle">Stopwatch</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+						<object class="NSAttributedString" key="NSAttributedTitle">
+							<string key="NSString"/>
+						</object>
+					</object>
+					<object class="NSMenuItem" id="818683620">
+						<reference key="NSMenu" ref="1066330960"/>
+						<string key="NSTitle">Start/Pause</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="529363896">
-						<reference key="NSMenu" ref="155865679"/>
-						<string key="NSTitle">Item 2</string>
+					<object class="NSMenuItem" id="804659775">
+						<reference key="NSMenu" ref="1066330960"/>
+						<string key="NSTitle">Reset</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="58759452">
-						<reference key="NSMenu" ref="155865679"/>
+					<object class="NSMenuItem" id="391890853">
+						<reference key="NSMenu" ref="1066330960"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<bool key="NSIsSeparator">YES</bool>
+						<string key="NSTitle"/>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="837662434">
+						<reference key="NSMenu" ref="1066330960"/>
 						<string key="NSTitle">Quit</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
@@ -1337,7 +1359,7 @@
 					<object class="IBActionConnection" key="connection">
 						<string key="label">terminate:</string>
 						<reference key="source" ref="1050"/>
-						<reference key="destination" ref="58759452"/>
+						<reference key="destination" ref="837662434"/>
 					</object>
 					<int key="connectionID">548</int>
 				</object>
@@ -2009,7 +2031,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusBar</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="155865679"/>
+						<reference key="destination" ref="1066330960"/>
 					</object>
 					<int key="connectionID">546</int>
 				</object>
@@ -2017,9 +2039,41 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">statusMenu</string>
 						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="155865679"/>
+						<reference key="destination" ref="1066330960"/>
 					</object>
 					<int key="connectionID">547</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">stopwatchStartPause</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="818683620"/>
+					</object>
+					<int key="connectionID">551</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">stopwatchReset</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="804659775"/>
+					</object>
+					<int key="connectionID">552</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">stopwatchStartPause:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="818683620"/>
+					</object>
+					<int key="connectionID">553</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">stopwatchReset:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="804659775"/>
+					</object>
+					<int key="connectionID">555</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3009,28 +3063,40 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">542</int>
-						<reference key="object" ref="155865679"/>
+						<reference key="object" ref="1066330960"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="122510793"/>
-							<reference ref="529363896"/>
-							<reference ref="58759452"/>
+							<reference ref="818683620"/>
+							<reference ref="804659775"/>
+							<reference ref="837662434"/>
+							<reference ref="391890853"/>
+							<reference ref="322896408"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">543</int>
-						<reference key="object" ref="122510793"/>
-						<reference key="parent" ref="155865679"/>
+						<reference key="object" ref="818683620"/>
+						<reference key="parent" ref="1066330960"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">544</int>
-						<reference key="object" ref="529363896"/>
-						<reference key="parent" ref="155865679"/>
+						<reference key="object" ref="804659775"/>
+						<reference key="parent" ref="1066330960"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">545</int>
-						<reference key="object" ref="58759452"/>
-						<reference key="parent" ref="155865679"/>
+						<reference key="object" ref="837662434"/>
+						<reference key="parent" ref="1066330960"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">549</int>
+						<reference key="object" ref="391890853"/>
+						<reference key="parent" ref="1066330960"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">550</int>
+						<reference key="object" ref="322896408"/>
+						<reference key="parent" ref="1066330960"/>
 					</object>
 				</array>
 			</object>
@@ -3175,6 +3241,8 @@
 				<string key="543.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="544.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="545.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="549.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="550.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3194,13 +3262,27 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">548</int>
+			<int key="maxID">555</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
 					<string key="className">AppDelegate</string>
 					<string key="superclassName">NSObject</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="stopwatchReset:">id</string>
+						<string key="stopwatchStartPause:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="stopwatchReset:">
+							<string key="name">stopwatchReset:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="stopwatchStartPause:">
+							<string key="name">stopwatchStartPause:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="statusBar">NSStatusItem</string>
 						<string key="statusMenu">NSMenu</string>

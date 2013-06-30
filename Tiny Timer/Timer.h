@@ -18,6 +18,7 @@
 - (void) startTimer;
 - (void) pauseTimer;
 - (void) resetTimer;
+- (bool) running;
 - (NSTimeInterval) lapSecondsElapsed;
 - (NSTimeInterval) secondsElapsed;
 - (NSString*) formatTimeElapsed: (NSTimeInterval)secondsElapsed;
