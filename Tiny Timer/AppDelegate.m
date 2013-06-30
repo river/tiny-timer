@@ -127,5 +127,6 @@
 	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]]];
 	[stopwatch setCountdownDuration:[input doubleValue]];
 	[self updateCountdownDurationMenu];
+	[self updateStatusBar];
 }
 @end
