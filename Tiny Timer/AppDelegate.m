@@ -12,31 +12,40 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
-@synthesize statusBar = _statusBar;
+@synthesize statusBar, startPauseMenuItem, stopwatchMenuItem, countdownMenuItem;
 
 - (void) awakeFromNib {
+	//	init menubar
 	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
-	
 	self.statusBar.menu = self.statusMenu;
 	self.statusBar.highlightMode = YES;
+	[stopwatchMenuItem setState:NSOnState];
 	
+	//	init stopwatch object
+	//  stopwatchMode == YES -> stopwatch
+	//  stopwatchMode == NO -> countdown
+	stopwatchMode = YES;
 	stopwatch = [[Timer alloc] init];
-	[stopwatch setCountdownDuration:20];
 	
+	//	update menubar display with time
 	[self updateStatusBar];
 }
 
 - (void) updateStatusBar {
-//	NSString *statusIcon;
-//	if ([stopwatch running]) {
-//		statusIcon = @"▶";
-//	} else {
-//		statusIcon = @"❚❚";
-//	}
-//	
-//	self.statusBar.title = [NSString stringWithFormat:@"%@ %@", statusIcon, [stopwatch formatTimeElapsed:[stopwatch secondsElapsed]] ];
+	//	NSString *statusIcon;
+	//	if ([stopwatch running]) {
+	//		statusIcon = @"▶";
+	//	} else {
+	//		statusIcon = @"❚❚";
+	//	}
+	//	
+	//	self.statusBar.title = [NSString stringWithFormat:@"%@ %@", statusIcon, [stopwatch formatTimeElapsed:[stopwatch secondsElapsed]] ];
 	
-	self.statusBar.title = [stopwatch formatTime:[stopwatch countdownSecondsRemaining]];
+	if (stopwatchMode) {
+		self.statusBar.title = [stopwatch formatTime:[stopwatch secondsElapsed]];
+	} else {
+		self.statusBar.title = [stopwatch formatTime:[stopwatch countdownSecondsRemaining]];
+	}
 }
 
 - (IBAction)stopwatchStartPause:(id)sender {
@@ -44,12 +53,14 @@
         // start timer
         [stopwatch startTimer];
         stopwatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateStatusBar) userInfo:nil repeats:YES];
+		[startPauseMenuItem setTitle:@"Pause"];
     } else {
         // pause timer
         [stopwatch pauseTimer];
 		[self updateStatusBar];
         [stopwatchTimer invalidate];
         stopwatchTimer = nil;
+		[startPauseMenuItem setTitle:@"Resume"];
     }
 }
 
@@ -62,5 +73,24 @@
     }
     
     [self updateStatusBar];
+	[startPauseMenuItem setTitle:@"Start"];
 }
+
+- (IBAction)stopwatchMenuClicked:(id)sender {
+	[stopwatchMenuItem setState:NSOnState];
+	[countdownMenuItem setState:NSOffState];
+	stopwatchMode = YES;
+	[self updateStatusBar];
+}
+
+- (IBAction)countdownMenuClicked:(id)sender {
+	// for testing only
+	[stopwatch setCountdownDuration:1800];
+	
+	[stopwatchMenuItem setState:NSOffState];
+	[countdownMenuItem setState:NSOnState];
+	stopwatchMode = NO;
+	[self updateStatusBar];
+}
+
 @end

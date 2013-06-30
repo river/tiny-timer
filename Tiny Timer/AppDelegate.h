@@ -12,6 +12,7 @@
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
 	NSTimer *stopwatchTimer;
 	Timer *stopwatch;
+	bool stopwatchMode;
 }
 
 - (void) updateStatusBar;
@@ -20,5 +21,11 @@
 @property (weak) IBOutlet NSMenu *statusMenu;
 - (IBAction)stopwatchStartPause:(id)sender;
 - (IBAction)stopwatchReset:(id)sender;
+@property (weak) IBOutlet NSMenuItem *startPauseMenuItem;
+
+@property (weak) IBOutlet NSMenuItem *stopwatchMenuItem;
+- (IBAction)stopwatchMenuClicked:(id)sender;
+@property (weak) IBOutlet NSMenuItem *countdownMenuItem;
+- (IBAction)countdownMenuClicked:(id)sender;
 
 @end
