@@ -13,6 +13,7 @@
 		570D24C4177FEDE90017A0FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 570D24C2177FEDE90017A0FB /* Credits.rtf */; };
 		570D24C7177FEDE90017A0FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24C6177FEDE90017A0FB /* AppDelegate.m */; };
 		570D24CA177FEDEA0017A0FB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570D24C8177FEDEA0017A0FB /* MainMenu.xib */; };
+		570D24D2177FF3ED0017A0FB /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24D1177FF3ED0017A0FB /* Timer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		570D24C5177FEDE90017A0FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		570D24C6177FEDE90017A0FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		570D24C9177FEDEA0017A0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		570D24D0177FF3ED0017A0FB /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		570D24D1177FF3ED0017A0FB /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				570D24C5177FEDE90017A0FB /* AppDelegate.h */,
+				570D24D0177FF3ED0017A0FB /* Timer.h */,
+				570D24D1177FF3ED0017A0FB /* Timer.m */,
 				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
 				570D24C8177FEDEA0017A0FB /* MainMenu.xib */,
 				570D24BA177FEDE90017A0FB /* Supporting Files */,
@@ -168,6 +173,7 @@
 			files = (
 				570D24C0177FEDE90017A0FB /* main.m in Sources */,
 				570D24C7177FEDE90017A0FB /* AppDelegate.m in Sources */,
+				570D24D2177FF3ED0017A0FB /* Timer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
