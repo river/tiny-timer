@@ -17,7 +17,7 @@
 
 - (void) updateStatusBar;
 - (void) updateCountdownDurationMenu;
-//- (NSString *) input;
+- (void) setCountdownDuration: (NSTimeInterval *)countdownDuration;
 
 @property (strong, nonatomic) IBOutlet NSStatusItem *statusBar;
 @property (weak) IBOutlet NSMenu *statusMenu;

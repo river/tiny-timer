@@ -54,6 +54,13 @@
 	}
 }
 
+- (void) setCountdownDuration: (NSTimeInterval *)countdownDuration {
+	[stopwatch setCountdownDuration:*countdownDuration];
+	[self updateCountdownDurationMenu];
+	[self updateStatusBar];
+}
+
+//  this is interface-specific for now (will probably remove later)
 - (void) updateCountdownDurationMenu {
 	self.countdownDurationMenuItem.title = [NSString stringWithFormat:@"↳ from %@", [stopwatch formatTime:[stopwatch countdownDuration]]];
 }
@@ -125,8 +132,7 @@
 
 - (IBAction)countdownDurationMenuClicked:(id)sender {
 	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]]];
-	[stopwatch setCountdownDuration:[input doubleValue]];
-	[self updateCountdownDurationMenu];
-	[self updateStatusBar];
+	NSTimeInterval inputInterval = [input doubleValue];
+	[self setCountdownDuration:&inputInterval];
 }
 @end
