@@ -17,12 +17,13 @@
 - (void) awakeFromNib {
 	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	
-	self.statusBar.title = @"00:00";
 	self.statusBar.menu = self.statusMenu;
 	self.statusBar.highlightMode = YES;
 	
 	stopwatch = [[Timer alloc] init];
 	[stopwatch setCountdownDuration:20];
+	
+	[self updateStatusBar];
 }
 
 - (void) updateStatusBar {
