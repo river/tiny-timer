@@ -13,6 +13,7 @@
 //  Uses simple datetime arithmetic to keep track of time elapsed
 
 #import "Timer.h"
+#include <math.h>
 
 @implementation Timer
 @synthesize countdownDuration;
@@ -58,8 +59,8 @@
         NSDate *currentDate = [NSDate date];
         lapTimeInterval = [currentDate timeIntervalSinceDate:startDate];
         
-        // make sure this is called only once per second to save resources
-        NSLog([NSString stringWithFormat:@"%f", countdownDuration - timeInterval - lapTimeInterval]);
+        //  make sure this is called only once per second to save resources
+        //  NSLog([NSString stringWithFormat:@"%f", countdownDuration - timeInterval - lapTimeInterval]);
     }
     
     return lapTimeInterval;
@@ -78,6 +79,8 @@
 
 //  Formats time elapsed as "00:00:00"
 - (NSString*) formatTime: (NSTimeInterval)seconds {
+	seconds = round(seconds);
+	
 	// When countdown reaches a negative
 	NSString *prefix = @"";
 	if (seconds < 0) {
