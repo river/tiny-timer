@@ -16,6 +16,8 @@
 }
 
 - (void) updateStatusBar;
+- (void) updateCountdownDurationMenu;
+//- (NSString *) input;
 
 @property (strong, nonatomic) IBOutlet NSStatusItem *statusBar;
 @property (weak) IBOutlet NSMenu *statusMenu;
@@ -27,5 +29,7 @@
 - (IBAction)stopwatchMenuClicked:(id)sender;
 @property (weak) IBOutlet NSMenuItem *countdownMenuItem;
 - (IBAction)countdownMenuClicked:(id)sender;
+@property (weak) IBOutlet NSMenuItem *countdownDurationMenuItem;
+- (IBAction)countdownDurationMenuClicked:(id)sender;
 
 @end

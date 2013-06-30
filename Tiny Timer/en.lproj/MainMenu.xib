@@ -1322,15 +1322,6 @@
 						<reference key="NSOnImage" ref="35465992"/>
 						<reference key="NSMixedImage" ref="502551668"/>
 					</object>
-					<object class="NSMenuItem" id="587421257">
-						<reference key="NSMenu" ref="1066330960"/>
-						<bool key="NSIsDisabled">YES</bool>
-						<string key="NSTitle">Mode</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="35465992"/>
-						<reference key="NSMixedImage" ref="502551668"/>
-					</object>
 					<object class="NSMenuItem" id="322896408">
 						<reference key="NSMenu" ref="1066330960"/>
 						<string key="NSTitle">Stopwatch</string>
@@ -1345,6 +1336,15 @@
 					<object class="NSMenuItem" id="65515369">
 						<reference key="NSMenu" ref="1066330960"/>
 						<string key="NSTitle">Countdown</string>
+						<string key="NSKeyEquiv"/>
+						<int key="NSMnemonicLoc">2147483647</int>
+						<reference key="NSOnImage" ref="35465992"/>
+						<reference key="NSMixedImage" ref="502551668"/>
+					</object>
+					<object class="NSMenuItem" id="792099683">
+						<reference key="NSMenu" ref="1066330960"/>
+						<bool key="NSIsDisabled">YES</bool>
+						<string key="NSTitle">[Duration]</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
 						<reference key="NSOnImage" ref="35465992"/>
@@ -2140,6 +2140,22 @@
 						<reference key="destination" ref="818683620"/>
 					</object>
 					<int key="connectionID">563</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">countdownDurationMenuItem</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="792099683"/>
+					</object>
+					<int key="connectionID">566</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">countdownDurationMenuClicked:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="792099683"/>
+					</object>
+					<int key="connectionID">567</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3137,8 +3153,8 @@
 							<reference ref="391890853"/>
 							<reference ref="65515369"/>
 							<reference ref="322896408"/>
+							<reference ref="792099683"/>
 							<reference ref="528409476"/>
-							<reference ref="587421257"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -3173,13 +3189,13 @@
 						<reference key="parent" ref="1066330960"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">557</int>
-						<reference key="object" ref="528409476"/>
+						<int key="objectID">564</int>
+						<reference key="object" ref="792099683"/>
 						<reference key="parent" ref="1066330960"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">558</int>
-						<reference key="object" ref="587421257"/>
+						<int key="objectID">565</int>
+						<reference key="object" ref="528409476"/>
 						<reference key="parent" ref="1066330960"/>
 					</object>
 				</array>
@@ -3333,9 +3349,9 @@
 					</object>
 				</object>
 				<string key="556.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="557.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="558.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="56.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="564.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="565.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="57.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="58.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="72.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -3354,7 +3370,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">563</int>
+			<int key="maxID">567</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3362,12 +3378,17 @@
 					<string key="className">AppDelegate</string>
 					<string key="superclassName">NSObject</string>
 					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="countdownDurationMenuClicked:">id</string>
 						<string key="countdownMenuClicked:">id</string>
 						<string key="stopwatchMenuClicked:">id</string>
 						<string key="stopwatchReset:">id</string>
 						<string key="stopwatchStartPause:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="countdownDurationMenuClicked:">
+							<string key="name">countdownDurationMenuClicked:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="countdownMenuClicked:">
 							<string key="name">countdownMenuClicked:</string>
 							<string key="candidateClassName">id</string>
@@ -3386,6 +3407,7 @@
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="countdownDurationMenuItem">NSMenuItem</string>
 						<string key="countdownMenuItem">NSMenuItem</string>
 						<string key="startPauseMenuItem">NSMenuItem</string>
 						<string key="statusBar">NSStatusItem</string>
@@ -3393,6 +3415,10 @@
 						<string key="stopwatchMenuItem">NSMenuItem</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="countdownDurationMenuItem">
+							<string key="name">countdownDurationMenuItem</string>
+							<string key="candidateClassName">NSMenuItem</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="countdownMenuItem">
 							<string key="name">countdownMenuItem</string>
 							<string key="candidateClassName">NSMenuItem</string>
