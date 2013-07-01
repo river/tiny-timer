@@ -11,17 +11,13 @@
 //#import "AXStatusItemPopup.h"
 //#import "MenuPopoverViewController.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate> {
-	NSTimer *stopwatchTimer;
-	RJTimer *stopwatch;
-	bool stopwatchMode;
-//	AXStatusItemPopup *_statusItemPopup;
-}
+@interface AppDelegate : NSObject <NSApplicationDelegate>
 
 - (void) updateStatusBar;
 - (void) updateCountdownDurationMenu;
 - (void) setCountdownDuration: (NSTimeInterval *)countdownDuration;
 
+// Status menu connections
 @property (strong, nonatomic) IBOutlet NSStatusItem *statusBar;
 @property (weak) IBOutlet NSMenu *statusMenu;
 - (IBAction)stopwatchStartPause:(id)sender;

@@ -11,6 +11,15 @@
 
 #import "AppDelegate.h"
 
+@interface AppDelegate() {
+	NSTimer *stopwatchTimer;
+	RJTimer *stopwatch;
+	bool stopwatchMode;
+	//	AXStatusItemPopup *_statusItemPopup;
+}
+
+@end
+
 @implementation AppDelegate
 
 @synthesize statusBar, startPauseMenuItem, stopwatchMenuItem, countdownMenuItem, countdownDurationMenuItem, statusMenu;

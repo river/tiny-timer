@@ -14,7 +14,20 @@
 #import "RJTimer.h"
 #include <math.h>
 
+@interface RJTimer() {
+	NSDate* startDate;
+    NSTimeInterval timeInterval;
+    NSTimeInterval lapTimeInterval;
+    BOOL stopwatchRunning;
+	
+	//  countdown
+	NSTimeInterval countdownDuration;
+}
+
+@end
+
 @implementation RJTimer
+
 @synthesize countdownDuration;
 
 //  Main methods to call: startTimer, pauseTimer, resetTimer to control the timer
