@@ -23,7 +23,7 @@
 	// init AXStatusItemPopup
 	NSImage *image = [NSImage imageNamed:@"cloud"];
 	NSImage *altImage = [NSImage imageNamed:@"cloudgrey"];
-	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController image:image alternateImage:altImage];
+	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController image:image alternateImage:altImage label:@"test"];
 	menuPopoverViewController.statusItemPopup = _statusItemPopup;
 	
 	

@@ -20,7 +20,7 @@
 // init
 - (id)initWithViewController:(NSViewController *)controller;
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image;
-- (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage;
+- (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage label:(NSString *)label;
 
 - (void) setStatusBarTitle: (NSString *)title;
 

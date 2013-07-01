@@ -36,11 +36,12 @@
 
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image
 {
-    return [self initWithViewController:controller image:image alternateImage:nil];
+    return [self initWithViewController:controller image:image alternateImage:nil label:nil];
 }
 
-//  TODO init with label
-- (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage
+
+
+- (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage label:(NSString *)label
 {
     height = [NSStatusBar systemStatusBar].thickness;
     
@@ -58,10 +59,9 @@
 		[_textField setFont:[NSFont menuBarFontOfSize:0]];
 		[_textField setBordered:NO];
 		[_textField setDrawsBackground:NO];
-        [_textField setStringValue:@"00:00:00"];
 		[_textField setSelectable:NO];
+		if (label) {[_textField setStringValue:label];}
 		[self addSubview:_textField];
-		
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         _statusItem.view = self;
         
@@ -87,8 +87,10 @@
     // set view background color
     if (_active) {
         [[NSColor selectedMenuItemColor] setFill];
+		[_textField setTextColor:[NSColor whiteColor]];
     } else {
         [[NSColor clearColor] setFill];
+		[_textField setTextColor:[NSColor blackColor]];
     }
     NSRectFill(dirtyRect);
     
