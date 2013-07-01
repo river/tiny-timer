@@ -8,8 +8,6 @@
 
 #import "AXStatusItemPopup.h"
 
-#define kMinViewWidth 22
-
 //
 // Private variables
 //
@@ -17,8 +15,10 @@
     NSViewController *_viewController;
     BOOL _active;
     NSImageView *_imageView;
+	NSTextField *_textField;
     NSStatusItem *_statusItem;
     NSPopover *_popover;
+	CGFloat height;
 }
 @end
 
@@ -39,27 +39,42 @@
     return [self initWithViewController:controller image:image alternateImage:nil];
 }
 
+//  TODO init with label
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage
 {
-    CGFloat height = [NSStatusBar systemStatusBar].thickness;
+    height = [NSStatusBar systemStatusBar].thickness;
     
-    self = [super initWithFrame:NSMakeRect(0, 0, kMinViewWidth, height)];
+    self = [super initWithFrame:NSMakeRect(0, 0, 0, 0)];
     if (self) {
         _viewController = controller;
         
         self.image = image;
         self.alternateImage = alternateImage;
         
-        _imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, kMinViewWidth, height)];
+        _imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 22, height)];
         [self addSubview:_imageView];
-        
+		
+		_textField = [[NSTextField alloc] initWithFrame:NSMakeRect(22, 3, 0, height)];
+		[_textField setFont:[NSFont menuBarFontOfSize:0]];
+		[_textField setBordered:NO];
+		[_textField setDrawsBackground:NO];
+        [_textField setStringValue:@"00:00:00"];
+		[_textField setSelectable:NO];
+		[self addSubview:_textField];
+		
         _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
         _statusItem.view = self;
         
         _active = NO;
         _animated = YES;
     }
+	[self updateViewFrame];
     return self;
+}
+
+- (void) setStatusBarTitle: (NSString *)title {
+	[_textField setStringValue:title];
+	[self updateViewFrame];
 }
 
 
@@ -126,12 +141,11 @@
 
 - (void)updateViewFrame
 {
-    CGFloat width = MAX(MAX(kMinViewWidth, self.alternateImage.size.width), self.image.size.width);
-    CGFloat height = [NSStatusBar systemStatusBar].thickness;
-    
+	[_textField sizeToFit];
+    CGFloat width = MAX(self.alternateImage.size.width, self.image.size.width) + [_textField frame].size.width + 8;
+	
     NSRect frame = NSMakeRect(0, 0, width, height);
     self.frame = frame;
-    _imageView.frame = frame;
     
     [self setNeedsDisplay:YES];
 }

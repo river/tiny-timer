@@ -22,6 +22,7 @@
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image;
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage;
 
+- (void) setStatusBarTitle: (NSString *)title;
 
 // show / hide popover
 - (void)showPopover;
