@@ -36,10 +36,12 @@
 
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image
 {
-    return [self initWithViewController:controller image:image alternateImage:nil label:nil];
+    return [self initWithViewController:controller image:image alternateImage:nil];
 }
 
-
+- (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage {
+	return [self initWithViewController:controller image:image alternateImage:nil label:nil];
+}
 
 - (id)initWithViewController:(NSViewController *)controller image:(NSImage *)image alternateImage:(NSImage *)alternateImage label:(NSString *)label
 {
