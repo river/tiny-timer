@@ -54,10 +54,10 @@
         self.image = image;
         self.alternateImage = alternateImage;
         
-        _imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(0, 0, 22, height)];
+        _imageView = [[NSImageView alloc] initWithFrame:NSMakeRect(3, 0, 22, height)];
         [self addSubview:_imageView];
 		
-		_textField = [[NSTextField alloc] initWithFrame:NSMakeRect(22, 3, 0, height)];
+		_textField = [[NSTextField alloc] initWithFrame:NSMakeRect(25, 3, 0, height)];
 		[_textField setFont:[NSFont menuBarFontOfSize:0]];
 		[_textField setBordered:NO];
 		[_textField setDrawsBackground:NO];
@@ -86,7 +86,7 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    // set view background color
+    // set view background color and label color
     if (_active) {
         [[NSColor selectedMenuItemColor] setFill];
 		[_textField setTextColor:[NSColor whiteColor]];
@@ -146,7 +146,7 @@
 - (void)updateViewFrame
 {
 	[_textField sizeToFit];
-    CGFloat width = MAX(self.alternateImage.size.width, self.image.size.width) + [_textField frame].size.width + 8;
+    CGFloat width = MAX(self.alternateImage.size.width, self.image.size.width) + [_textField frame].size.width + 12;
 	
     NSRect frame = NSMakeRect(0, 0, width, height);
     self.frame = frame;
