@@ -16,6 +16,15 @@
 @synthesize statusBar, startPauseMenuItem, stopwatchMenuItem, countdownMenuItem, countdownDurationMenuItem, statusMenu;
 
 - (void) awakeFromNib {
+	
+	// init MenuPopoverViewController (shown inside the popover)
+	MenuPopoverViewController *menuPopoverViewController = [[MenuPopoverViewController alloc] initWithNibName:@"MenuPopoverViewController" bundle:nil];
+	
+	// init AXStatusItemPopup
+	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController];
+	menuPopoverViewController.statusItemPopup = _statusItemPopup;
+
+	
 	//	init menubar
 	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
 	self.statusBar.menu = statusMenu;

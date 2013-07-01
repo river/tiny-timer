@@ -8,11 +8,14 @@
 
 #import <Cocoa/Cocoa.h>
 #import "RJTimer.h"
+#import "AXStatusItemPopup.h"
+#import "MenuPopoverViewController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
 	NSTimer *stopwatchTimer;
 	RJTimer *stopwatch;
 	bool stopwatchMode;
+	AXStatusItemPopup *_statusItemPopup;
 }
 
 - (void) updateStatusBar;

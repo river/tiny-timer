@@ -59,10 +59,10 @@
 		570D24A7177FEDE80017A0FB = {
 			isa = PBXGroup;
 			children = (
-				57AEA9161780D4D30029930D /* tiny-timer.icns */,
 				570D24B9177FEDE90017A0FB /* Tiny Timer */,
 				570D24B2177FEDE90017A0FB /* Frameworks */,
 				570D24B1177FEDE90017A0FB /* Products */,
+				57AEA9161780D4D30029930D /* tiny-timer.icns */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +96,9 @@
 		570D24B9177FEDE90017A0FB /* Tiny Timer */ = {
 			isa = PBXGroup;
 			children = (
+				57998A4217811AF200D24C30 /* Code */,
 				57998A4617811B3D00D24C30 /* RJTimer */,
 				57998A3D17811AC500D24C30 /* AXStatusItemPopup */,
-				57998A4217811AF200D24C30 /* Code */,
 				570D24BA177FEDE90017A0FB /* Supporting Files */,
 			);
 			path = "Tiny Timer";
