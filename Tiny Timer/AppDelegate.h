@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "Timer.h"
+#import "RJTimer.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate> {
 	NSTimer *stopwatchTimer;
-	Timer *stopwatch;
+	RJTimer *stopwatch;
 	bool stopwatchMode;
 }
 

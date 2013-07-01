@@ -1,14 +1,13 @@
 //
-//  Timer.h
-//  Reading Speed
+//  RJTimer.h
 //
 //  Created by River Jiang on 12-08-01.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 River Jiang. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Timer : NSObject {
+@interface RJTimer : NSObject {
     NSDate* startDate;
     NSTimeInterval timeInterval;
     NSTimeInterval lapTimeInterval;

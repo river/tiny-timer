@@ -1,9 +1,8 @@
 //
-//  Timer.m
-//  Reading Speed
+//  RJTimer.m
 //
 //  Created by River Jiang on 12-08-01.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2013 River Jiang. All rights reserved.
 //
 
 //  Basic timer class
@@ -12,10 +11,10 @@
 //  lapSecondsElapsed returns a NSTimeInterval, which is essentially an integer of seconds elapsed with some extra methods
 //  Uses simple datetime arithmetic to keep track of time elapsed
 
-#import "Timer.h"
+#import "RJTimer.h"
 #include <math.h>
 
-@implementation Timer
+@implementation RJTimer
 @synthesize countdownDuration;
 
 //  Main methods to call: startTimer, pauseTimer, resetTimer to control the timer

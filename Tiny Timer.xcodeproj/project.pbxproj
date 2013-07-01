@@ -13,7 +13,8 @@
 		570D24C4177FEDE90017A0FB /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 570D24C2177FEDE90017A0FB /* Credits.rtf */; };
 		570D24C7177FEDE90017A0FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24C6177FEDE90017A0FB /* AppDelegate.m */; };
 		570D24CA177FEDEA0017A0FB /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 570D24C8177FEDEA0017A0FB /* MainMenu.xib */; };
-		570D24D2177FF3ED0017A0FB /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 570D24D1177FF3ED0017A0FB /* Timer.m */; };
+		57998A4017811AC500D24C30 /* AXStatusItemPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 57998A3F17811AC500D24C30 /* AXStatusItemPopup.m */; };
+		57998A4917811BE600D24C30 /* RJTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57998A4817811BE600D24C30 /* RJTimer.m */; };
 		57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA9161780D4D30029930D /* tiny-timer.icns */; };
 /* End PBXBuildFile section */
 
@@ -31,8 +32,10 @@
 		570D24C5177FEDE90017A0FB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		570D24C6177FEDE90017A0FB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		570D24C9177FEDEA0017A0FB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		570D24D0177FF3ED0017A0FB /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
-		570D24D1177FF3ED0017A0FB /* Timer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
+		57998A3E17811AC500D24C30 /* AXStatusItemPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AXStatusItemPopup.h; sourceTree = "<group>"; };
+		57998A3F17811AC500D24C30 /* AXStatusItemPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AXStatusItemPopup.m; sourceTree = "<group>"; };
+		57998A4717811BE600D24C30 /* RJTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RJTimer.h; path = RJTimer/RJTimer.h; sourceTree = SOURCE_ROOT; };
+		57998A4817811BE600D24C30 /* RJTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RJTimer.m; path = RJTimer/RJTimer.m; sourceTree = SOURCE_ROOT; };
 		57AEA9161780D4D30029930D /* tiny-timer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tiny-timer.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,11 +91,9 @@
 		570D24B9177FEDE90017A0FB /* Tiny Timer */ = {
 			isa = PBXGroup;
 			children = (
-				570D24C5177FEDE90017A0FB /* AppDelegate.h */,
-				570D24D0177FF3ED0017A0FB /* Timer.h */,
-				570D24D1177FF3ED0017A0FB /* Timer.m */,
-				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
-				570D24C8177FEDEA0017A0FB /* MainMenu.xib */,
+				57998A4617811B3D00D24C30 /* RJTimer */,
+				57998A3D17811AC500D24C30 /* AXStatusItemPopup */,
+				57998A4217811AF200D24C30 /* Code */,
 				570D24BA177FEDE90017A0FB /* Supporting Files */,
 			);
 			path = "Tiny Timer";
@@ -108,6 +109,34 @@
 				570D24C2177FEDE90017A0FB /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57998A3D17811AC500D24C30 /* AXStatusItemPopup */ = {
+			isa = PBXGroup;
+			children = (
+				57998A3E17811AC500D24C30 /* AXStatusItemPopup.h */,
+				57998A3F17811AC500D24C30 /* AXStatusItemPopup.m */,
+			);
+			path = AXStatusItemPopup;
+			sourceTree = SOURCE_ROOT;
+		};
+		57998A4217811AF200D24C30 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				570D24C5177FEDE90017A0FB /* AppDelegate.h */,
+				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
+				570D24C8177FEDEA0017A0FB /* MainMenu.xib */,
+			);
+			name = Code;
+			sourceTree = "<group>";
+		};
+		57998A4617811B3D00D24C30 /* RJTimer */ = {
+			isa = PBXGroup;
+			children = (
+				57998A4717811BE600D24C30 /* RJTimer.h */,
+				57998A4817811BE600D24C30 /* RJTimer.m */,
+			);
+			name = RJTimer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,7 +206,8 @@
 			files = (
 				570D24C0177FEDE90017A0FB /* main.m in Sources */,
 				570D24C7177FEDE90017A0FB /* AppDelegate.m in Sources */,
-				570D24D2177FF3ED0017A0FB /* Timer.m in Sources */,
+				57998A4017811AC500D24C30 /* AXStatusItemPopup.m in Sources */,
+				57998A4917811BE600D24C30 /* RJTimer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

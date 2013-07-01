@@ -27,7 +27,7 @@
 	//  stopwatchMode == YES -> stopwatch
 	//  stopwatchMode == NO -> countdown
 	stopwatchMode = YES;
-	stopwatch = [[Timer alloc] init];
+	stopwatch = [[RJTimer alloc] init];
 	
 	//  default countdown duration: 30 min
 	[stopwatch setCountdownDuration:1800];
