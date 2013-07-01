@@ -17,6 +17,10 @@
 		57998A4917811BE600D24C30 /* RJTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 57998A4817811BE600D24C30 /* RJTimer.m */; };
 		57998A4D17811D7400D24C30 /* MenuPopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57998A4B17811D7400D24C30 /* MenuPopoverViewController.m */; };
 		57998A4E17811D7400D24C30 /* MenuPopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57998A4C17811D7400D24C30 /* MenuPopoverViewController.xib */; };
+		57998A54178125D700D24C30 /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A50178125D700D24C30 /* cloud.png */; };
+		57998A55178125D700D24C30 /* cloud@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A51178125D700D24C30 /* cloud@2x.png */; };
+		57998A56178125D700D24C30 /* cloudgrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A52178125D700D24C30 /* cloudgrey.png */; };
+		57998A57178125D700D24C30 /* cloudgrey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A53178125D700D24C30 /* cloudgrey@2x.png */; };
 		57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA9161780D4D30029930D /* tiny-timer.icns */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +45,10 @@
 		57998A4A17811D7400D24C30 /* MenuPopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuPopoverViewController.h; sourceTree = "<group>"; };
 		57998A4B17811D7400D24C30 /* MenuPopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuPopoverViewController.m; sourceTree = "<group>"; };
 		57998A4C17811D7400D24C30 /* MenuPopoverViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuPopoverViewController.xib; sourceTree = "<group>"; };
+		57998A50178125D700D24C30 /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloud.png; sourceTree = "<group>"; };
+		57998A51178125D700D24C30 /* cloud@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud@2x.png"; sourceTree = "<group>"; };
+		57998A52178125D700D24C30 /* cloudgrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudgrey.png; sourceTree = "<group>"; };
+		57998A53178125D700D24C30 /* cloudgrey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloudgrey@2x.png"; sourceTree = "<group>"; };
 		57AEA9161780D4D30029930D /* tiny-timer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tiny-timer.icns"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +107,7 @@
 				57998A4217811AF200D24C30 /* Code */,
 				57998A4617811B3D00D24C30 /* RJTimer */,
 				57998A3D17811AC500D24C30 /* AXStatusItemPopup */,
+				57998A4F178125D600D24C30 /* Resources */,
 				570D24BA177FEDE90017A0FB /* Supporting Files */,
 			);
 			path = "Tiny Timer";
@@ -145,6 +154,17 @@
 				57998A4817811BE600D24C30 /* RJTimer.m */,
 			);
 			name = RJTimer;
+			sourceTree = "<group>";
+		};
+		57998A4F178125D600D24C30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57998A50178125D700D24C30 /* cloud.png */,
+				57998A51178125D700D24C30 /* cloud@2x.png */,
+				57998A52178125D700D24C30 /* cloudgrey.png */,
+				57998A53178125D700D24C30 /* cloudgrey@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +223,10 @@
 				570D24CA177FEDEA0017A0FB /* MainMenu.xib in Resources */,
 				57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */,
 				57998A4E17811D7400D24C30 /* MenuPopoverViewController.xib in Resources */,
+				57998A54178125D700D24C30 /* cloud.png in Resources */,
+				57998A55178125D700D24C30 /* cloud@2x.png in Resources */,
+				57998A56178125D700D24C30 /* cloudgrey.png in Resources */,
+				57998A57178125D700D24C30 /* cloudgrey@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

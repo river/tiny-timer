@@ -21,9 +21,11 @@
 	MenuPopoverViewController *menuPopoverViewController = [[MenuPopoverViewController alloc] initWithNibName:@"MenuPopoverViewController" bundle:nil];
 	
 	// init AXStatusItemPopup
-	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController];
+	NSImage *image = [NSImage imageNamed:@"cloud"];
+	NSImage *altImage = [NSImage imageNamed:@"cloudgrey"];
+	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController image:image alternateImage:altImage];
 	menuPopoverViewController.statusItemPopup = _statusItemPopup;
-
+	
 	
 	//	init menubar
 	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
