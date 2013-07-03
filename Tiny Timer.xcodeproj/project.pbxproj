@@ -22,6 +22,7 @@
 		57998A56178125D700D24C30 /* cloudgrey.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A52178125D700D24C30 /* cloudgrey.png */; };
 		57998A57178125D700D24C30 /* cloudgrey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 57998A53178125D700D24C30 /* cloudgrey@2x.png */; };
 		57AEA9171780D4D30029930D /* tiny-timer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 57AEA9161780D4D30029930D /* tiny-timer.icns */; };
+		57EE2AC217847B0D000849E5 /* NSWindow+canBecomeKeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 57EE2AC117847B0D000849E5 /* NSWindow+canBecomeKeyWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,8 @@
 		57998A52178125D700D24C30 /* cloudgrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cloudgrey.png; sourceTree = "<group>"; };
 		57998A53178125D700D24C30 /* cloudgrey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloudgrey@2x.png"; sourceTree = "<group>"; };
 		57AEA9161780D4D30029930D /* tiny-timer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = "tiny-timer.icns"; sourceTree = "<group>"; };
+		57EE2AC017847B0D000849E5 /* NSWindow+canBecomeKeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+canBecomeKeyWindow.h"; sourceTree = "<group>"; };
+		57EE2AC117847B0D000849E5 /* NSWindow+canBecomeKeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+canBecomeKeyWindow.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 			children = (
 				570D24C5177FEDE90017A0FB /* AppDelegate.h */,
 				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
+				57EE2AC017847B0D000849E5 /* NSWindow+canBecomeKeyWindow.h */,
+				57EE2AC117847B0D000849E5 /* NSWindow+canBecomeKeyWindow.m */,
 				570D24C8177FEDEA0017A0FB /* MainMenu.xib */,
 				57998A4A17811D7400D24C30 /* MenuPopoverViewController.h */,
 				57998A4B17811D7400D24C30 /* MenuPopoverViewController.m */,
@@ -242,6 +247,7 @@
 				57998A4017811AC500D24C30 /* AXStatusItemPopup.m in Sources */,
 				57998A4917811BE600D24C30 /* RJTimer.m in Sources */,
 				57998A4D17811D7400D24C30 /* MenuPopoverViewController.m in Sources */,
+				57EE2AC217847B0D000849E5 /* NSWindow+canBecomeKeyWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

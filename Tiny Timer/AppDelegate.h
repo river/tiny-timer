@@ -8,8 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "RJTimer.h"
-//#import "AXStatusItemPopup.h"
-//#import "MenuPopoverViewController.h"
+#import "AXStatusItemPopup.h"
+#import "MenuPopoverViewController.h"
+#import "NSWindow+canBecomeKeyWindow.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
