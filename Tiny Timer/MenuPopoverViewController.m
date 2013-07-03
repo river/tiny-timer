@@ -24,4 +24,8 @@
     return self;
 }
 
+- (IBAction)startPauseButtonPressed:(id)sender {
+	NSLog(@"test");
+}
+
 @end

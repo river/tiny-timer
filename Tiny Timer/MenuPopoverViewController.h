@@ -12,5 +12,6 @@
 @interface MenuPopoverViewController : NSViewController
 
 @property(weak, nonatomic) AXStatusItemPopup *statusItemPopup;
+- (IBAction)startPauseButtonPressed:(id)sender;
 
 @end

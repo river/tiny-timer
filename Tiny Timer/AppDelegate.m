@@ -26,15 +26,14 @@
 
 - (void) awakeFromNib {
 	
-//	// init MenuPopoverViewController (shown inside the popover)
+	// init MenuPopoverViewController (shown inside the popover)
 	MenuPopoverViewController *menuPopoverViewController = [[MenuPopoverViewController alloc] initWithNibName:@"MenuPopoverViewController" bundle:nil];
-//
-//	// init AXStatusItemPopup
+
+	// init AXStatusItemPopup
 	NSImage *image = [NSImage imageNamed:@"cloud"];
 	NSImage *altImage = [NSImage imageNamed:@"cloudgrey"];
 	_statusItemPopup = [[AXStatusItemPopup alloc] initWithViewController:menuPopoverViewController image:image alternateImage:altImage label:@"test"];
 	menuPopoverViewController.statusItemPopup = _statusItemPopup;
-	
 	
 	//	init menubar
 	self.statusBar = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
