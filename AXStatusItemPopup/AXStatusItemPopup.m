@@ -171,6 +171,8 @@
     if (!_popover) {
         _popover = [[NSPopover alloc] init];
         _popover.contentViewController = _viewController;
+		_popover.behavior = NSPopoverBehaviorTransient;
+		_popover.delegate = self;
     }
     
     if (!_popover.isShown) {
@@ -181,11 +183,20 @@
 
 - (void)hidePopover
 {
-    self.active = NO;
-    
-    if (_popover && _popover.isShown) {
+	self.active = NO;
+    if (_popover) {
         [_popover close];
     }
+}
+
+
+////////////////////////////////////
+#pragma mark - Popover Delegate
+////////////////////////////////////
+
+- (void) popoverDidClose:(NSNotification *)notification {
+	self.active = NO;
+    _popover = nil;
 }
 
 @end

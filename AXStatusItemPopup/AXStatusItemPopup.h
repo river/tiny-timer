@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface AXStatusItemPopup : NSView
+@interface AXStatusItemPopup : NSView <NSPopoverDelegate>
 
 // properties
 @property(assign, nonatomic, getter=isActive) BOOL active;
