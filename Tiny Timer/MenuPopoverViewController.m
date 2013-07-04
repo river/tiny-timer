@@ -22,7 +22,7 @@
 @synthesize statusItemPopup;
 
 // synthesize UI elements
-@synthesize startPauseButton;
+@synthesize startPauseButton, countdownHourTextField, countdownMinuteTextField, countdownSecondTextField;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +58,24 @@
 	[self updateStatusBar];
 }
 
+- (void) updateCountdownDuation {
+	double newDuration = [countdownHourTextField intValue]*3600 + [countdownMinuteTextField intValue]*60 + [countdownSecondTextField intValue];
+	[self setCountdownDuration:&newDuration];
+}
+
+- (IBAction)stopwatchCountdownSegmentedControl:(NSSegmentedControl*)sender {
+	NSInteger cell = [sender selectedSegment];
+	if (cell == 0) {
+		// stopwatch clicked
+		stopwatchMode = YES;
+		[self updateStatusBar];
+	} else if (cell == 1) {
+		// countdown clicked
+		stopwatchMode = NO;
+		[self updateStatusBar];
+	}
+}
+
 - (IBAction)stopwatchStartPause:(id)sender {
 	if (!stopwatchTimer) {
 		// start timer
@@ -90,77 +108,28 @@
 	[startPauseButton setTitle:@"Start"];
 }
 
+- (IBAction)resetCountdown:(id)sender {
+	[countdownHourTextField setStringValue:@"00"];
+	[countdownMinuteTextField setStringValue:@"30"];
+	[countdownSecondTextField setStringValue:@"00"];
+	[self updateCountdownDuation];
+}
+
 - (IBAction)closePopover:(id)sender {
 	[statusItemPopup hidePopover];
 }
 
+- (IBAction)countdownHourEdit:(id)sender {
+	[self updateCountdownDuation];
+}
+
+- (IBAction)countdownMinuteEdit:(id)sender {
+	[self updateCountdownDuation];
+}
+
+- (IBAction)countdownSecondEdit:(id)sender {
+	[self updateCountdownDuation];
+}
 @end
 
-//- (IBAction)stopwatchStartPause:(id)sender {
-//	if (!stopwatchTimer) {
-//        // start timer
-//        [stopwatch startTimer];
-//        stopwatchTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateStatusBar) userInfo:nil repeats:YES];
-////		[startPauseMenuItem setTitle:@"Pause"];
-//    } else {
-//        // pause timer
-//        [stopwatch pauseTimer];
-//		[self updateStatusBar];
-//        [stopwatchTimer invalidate];
-//        stopwatchTimer = nil;
-////		[startPauseMenuItem setTitle:@"Resume"];
-//    }
-//}
-//
-//- (IBAction)stopwatchReset:(id)sender {
-//	[stopwatch resetTimer];
-//
-//    if (stopwatchTimer) {
-//        [stopwatchTimer invalidate];
-//        stopwatchTimer = nil;
-//    }
-//
-//    [self updateStatusBar];
-////	[startPauseMenuItem setTitle:@"Start"];
-//}
-//
-//- (IBAction)stopwatchMenuClicked:(id)sender {
-//	stopwatchMode = YES;
-//	[self updateStatusBar];
-//}
-//
-//- (IBAction)countdownMenuClicked:(id)sender {
-//	stopwatchMode = NO;
-//	[self updateStatusBar];
-//}
 
-//- (NSString *)	input: (NSString *)prompt
-//				defaultValue: (NSString *)defaultValue
-//				informativeText: (NSString *)informativeText {
-//	NSAlert *alert = [NSAlert alertWithMessageText:prompt
-//									 defaultButton:@"OK"
-//								   alternateButton:@"Cancel"
-//									   otherButton:nil
-//						 informativeTextWithFormat:@"%@", informativeText];
-//
-//	NSTextField *input = [[NSTextField alloc] initWithFrame:NSMakeRect(0, 0, 300, 24)];
-//	[input setStringValue:defaultValue];
-//	[alert setAccessoryView:input];
-//	NSInteger button = [alert runModal];
-//	if (button == NSAlertDefaultReturn) {
-//		[input validateEditing];
-//		return [input stringValue];
-//	} else if (button == NSAlertAlternateReturn) {
-//		return nil;
-//	} else {
-//		return nil;
-//	}
-//}
-//
-//- (IBAction)countdownDurationMenuClicked:(id)sender {
-//	NSString *input = [self input:@"Set countdown duration (seconds)" defaultValue:[NSString stringWithFormat:@"%.f", [stopwatch countdownDuration]] informativeText:@"Don't worry, this will not reset the current countdown timer."];
-//	if (input) {
-//		NSTimeInterval inputInterval = [input doubleValue];
-//		[self setCountdownDuration:&inputInterval];
-//	}
-//}

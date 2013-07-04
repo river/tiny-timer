@@ -16,6 +16,7 @@
 - (void) setCountdownDuration: (NSTimeInterval *)countdownDuration;
 
 @property(weak, nonatomic) AXStatusItemPopup *statusItemPopup;
+- (IBAction)stopwatchCountdownSegmentedControl:(id)sender;
 
 - (IBAction)stopwatchStartPause:(id)sender;
 - (IBAction)stopwatchReset:(id)sender;
@@ -25,6 +26,14 @@
 @property (weak) IBOutlet NSTextField *countdownMinuteField;
 @property (weak) IBOutlet NSTextField *countdownSecondField;
 
+- (IBAction)resetCountdown:(id)sender;
 - (IBAction)closePopover:(id)sender;
+
+@property (weak) IBOutlet NSTextField *countdownHourTextField;
+@property (weak) IBOutlet NSTextField *countdownMinuteTextField;
+@property (weak) IBOutlet NSTextField *countdownSecondTextField;
+- (IBAction)countdownHourEdit:(id)sender;
+- (IBAction)countdownMinuteEdit:(id)sender;
+- (IBAction)countdownSecondEdit:(id)sender;
 
 @end
