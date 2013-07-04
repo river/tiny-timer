@@ -79,6 +79,15 @@
 }
 
 - (IBAction)stopwatchReset:(id)sender {
+	[stopwatch resetTimer];
+	
+	if (stopwatchTimer) {
+		[stopwatchTimer invalidate];
+		stopwatchTimer = nil;
+	}
+	
+	[self updateStatusBar];
+	[startPauseButton setTitle:@"Start"];
 }
 
 - (IBAction)closePopover:(id)sender {
