@@ -110,6 +110,8 @@
 - (NSString *)	input: (NSString *)prompt
 				defaultValue: (NSString *)defaultValue
 				informativeText: (NSString *)informativeText {
+	[NSApp activateIgnoringOtherApps:YES];
+	
 	NSAlert *alert = [NSAlert alertWithMessageText:prompt
 									 defaultButton:@"OK"
 								   alternateButton:@"Cancel"
