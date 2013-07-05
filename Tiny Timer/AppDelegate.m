@@ -96,7 +96,6 @@
 - (IBAction)stopwatchMenuClicked:(id)sender {
 	[stopwatchMenuItem setState:NSOnState];
 	[countdownMenuItem setState:NSOffState];
-	[countdownDurationMenuItem setEnabled:NO];
 	stopwatchMode = YES;
 	[self updateStatusBar];
 }
@@ -104,7 +103,6 @@
 - (IBAction)countdownMenuClicked:(id)sender {
 	[stopwatchMenuItem setState:NSOffState];
 	[countdownMenuItem setState:NSOnState];
-	[countdownDurationMenuItem setEnabled:YES];
 	stopwatchMode = NO;
 	[self updateStatusBar];
 }
@@ -140,5 +138,7 @@
 		NSTimeInterval inputInterval = [seconds doubleValue];
 		[self setCountdownDuration:&inputInterval];
 	}
+	
+	
 }
 @end

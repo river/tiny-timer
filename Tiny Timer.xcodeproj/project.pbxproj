@@ -89,9 +89,9 @@
 			isa = PBXGroup;
 			children = (
 				570D24C5177FEDE90017A0FB /* AppDelegate.h */,
+				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
 				570D24D0177FF3ED0017A0FB /* Timer.h */,
 				570D24D1177FF3ED0017A0FB /* Timer.m */,
-				570D24C6177FEDE90017A0FB /* AppDelegate.m */,
 				570D24C8177FEDEA0017A0FB /* MainMenu.xib */,
 				570D24BA177FEDE90017A0FB /* Supporting Files */,
 			);

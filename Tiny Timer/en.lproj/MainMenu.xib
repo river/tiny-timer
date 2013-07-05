@@ -1343,7 +1343,6 @@
 					</object>
 					<object class="NSMenuItem" id="792099683">
 						<reference key="NSMenu" ref="1066330960"/>
-						<bool key="NSIsDisabled">YES</bool>
 						<string key="NSTitle">[Duration]</string>
 						<string key="NSKeyEquiv"/>
 						<int key="NSMnemonicLoc">2147483647</int>
